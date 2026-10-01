@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: dr-aqua-backend
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        value: https://ivfvxnwciuqicqqnlbtx.supabase.co
+      - key: SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml2ZnZ4bndjaXVxaWNxcW5sYnR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1ODU3MDAsImV4cCI6MjA3ODE2MTcwMH0.c-PfjifYWi5_lxK0VGXKRmUo8zhoXHz7NYR4zV6Usmg
