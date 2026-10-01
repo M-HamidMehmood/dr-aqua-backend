@@ -508,7 +508,11 @@ app.post('/api/sync', async (req, res) => {
 })
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`[Dr. Aqua Backend API] Running on port ${PORT}`)
-  console.log(`[Supabase Connection] Connected to ${SUPABASE_URL}`)
-})
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`[Dr. Aqua Backend API] Running on port ${PORT}`)
+    console.log(`[Supabase Connection] Connected to ${SUPABASE_URL}`)
+  })
+}
+
+module.exports = app
